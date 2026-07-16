@@ -1046,9 +1046,9 @@ asynStatus Xspress3::eraseSCAMCAROI(void)
         paramStatus = ((setDoubleParam(chan, xsp3ChanSca7Param, 0.0) == asynSuccess) && paramStatus);
         paramStatus = ((setDoubleParam(chan, xsp3ChanDTPercentParam, 0.0) == asynSuccess) && paramStatus);
         paramStatus = ((setDoubleParam(chan, xsp3ChanDTFactorParam, 1.0) == asynSuccess) && paramStatus);
-
-        // callParamCallbacks(chan);
     }
+
+    callParamCallbacksAllChannels();
 
     // Send a blank frame
     NDArray *pMCA;
